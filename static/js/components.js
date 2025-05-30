@@ -2,14 +2,20 @@
 async function loadComponent(url, targetSelector) {
   try {
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const html = await response.text();
-    document.querySelector(targetSelector).innerHTML = html;
-    
-    // Re-initialize event listeners for the component
-    if (targetSelector === '.sidebar-container') {
-      initializeSidebar();
-    } else if (targetSelector === '.header-right-container') {
-      initializeProfileDropdown();
+    const container = document.querySelector(targetSelector);
+    if (container) {
+      container.innerHTML = html;
+      
+      // Re-initialize event listeners for the component
+      if (targetSelector === '.sidebar-container') {
+        initializeSidebar();
+      } else if (targetSelector === '.header-right-container') {
+        initializeProfileDropdown();
+      }
     }
   } catch (error) {
     console.error('Error loading component:', error);
@@ -22,6 +28,8 @@ function initializeSidebar() {
   const overlay = document.querySelector('.overlay');
   const hamburger = document.querySelector('.hamburger');
 
+  if (!sidebar || !overlay || !hamburger) return;
+
   function openSide() {
     sidebar.classList.add('open');
     overlay.classList.add('show');
@@ -32,8 +40,8 @@ function initializeSidebar() {
     overlay.classList.remove('show');
   }
 
-  hamburger?.addEventListener('click', openSide);
-  overlay?.addEventListener('click', closeSide);
+  hamburger.addEventListener('click', openSide);
+  overlay.addEventListener('click', closeSide);
 
   // Handle submenu toggles
   const submenus = document.querySelectorAll('.has-submenu > a');
@@ -86,6 +94,6 @@ function initializeProfileDropdown() {
 
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  loadComponent('/components/sidebar.html', '.sidebar-container');
-  loadComponent('/components/profile-dropdown.html', '.header-right-container');
+  loadComponent('./components/sidebar.html', '.sidebar-container');
+  loadComponent('./components/profile-dropdown.html', '.header-right-container');
 });
