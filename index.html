@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CIPHERA Dashboard</title>
-
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CIPHERA Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
 :root{
   --bg:#181d2b;
   --sidebar-bg:rgba(20,23,37,.9);
@@ -139,178 +136,133 @@ body{
   .info-cards,.list-cards{grid-template-columns:1fr!important}
 }
 .overlay{display:none}
-</style>
+  </style>
 </head>
 <body>
+  <div class="overlay"></div>
+  
+  <aside class="sidebar">
+    <div class="logo">CIPHERA</div>
+    <ul>
+      <li><a href="#"><span class="icon"><i class="fas fa-gauge-high"></i></span>Dashboard</a></li>
+      <li class="has-submenu">
+        <a href="#"><span class="icon"><i class="fas fa-database"></i></span>Data</a>
+        <ul>
+          <li><a href="#"><span class="icon"><i class="fas fa-map-marker-alt"></i></span>Location</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-phone"></i></span>Call Log</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-comment"></i></span>Messages</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-comments"></i></span>IMs</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-address-book"></i></span>Contacts</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-key"></i></span>Key Logs</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-phone-volume"></i></span>VoIP</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-file-audio"></i></span>VoIP Recordings</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-envelope"></i></span>Emails</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-camera"></i></span>App Screenshots</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-image"></i></span>Photos</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-video"></i></span>Videos</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-volume-up"></i></span>Ambient</a></li>
+          <li><a href="#"><span class="icon"><i class="fas fa-chart-line"></i></span>App Activity</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><span class="icon"><i class="fas fa-bell"></i></span>Alerts</a></li>
+      <li><a href="#"><span class="icon"><i class="fas fa-comment-alt"></i></span>Spoof SMS</a></li>
+      <li><a href="#"><span class="icon"><i class="fas fa-file-alt"></i></span>Reports</a></li>
+    </ul>
+  </aside>
 
-<div class="overlay"></div>
-
-<!-- ===== SIDEBAR ===== -->
-<aside class="sidebar">
-  <div class="logo">CIPHERA</div>
-  <ul>
-    <li><a href="#"><span class="icon"><i class="fas fa-gauge-high"></i></span>Dashboard</a></li>
-
-    <!-- Data collapsed by default -->
-    <li class="has-submenu">
-      <a href="#"><span class="icon"><i class="fas fa-database"></i></span>Data</a>
-      <ul>
-        <li><a href="#"><span class="icon"><i class="fas fa-map-marker-alt"></i></span>Location</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-phone"></i></span>Call Log</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-comment"></i></span>Messages</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-comments"></i></span>IMs</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-address-book"></i></span>Contacts</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-key"></i></span>Key Logs</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-phone-volume"></i></span>VoIP</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-file-audio"></i></span>VoIP Recordings</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-envelope"></i></span>Emails</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-camera"></i></span>App Screenshots</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-image"></i></span>Photos</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-video"></i></span>Videos</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-volume-up"></i></span>Ambient</a></li>
-        <li><a href="#"><span class="icon"><i class="fas fa-chart-line"></i></span>App Activity</a></li>
-      </ul>
-    </li>
-
-    <li><a href="#"><span class="icon"><i class="fas fa-bell"></i></span>Alerts</a></li>
-    <li><a href="#"><span class="icon"><i class="fas fa-comment-alt"></i></span>Spoof SMS</a></li>
-    <li><a href="#"><span class="icon"><i class="fas fa-file-alt"></i></span>Reports</a></li>
-  </ul>
-</aside>
-
-<!-- ===== MAIN ===== -->
-<div class="main">
-  <div class="page-header">
-    <div class="header-left">
-      <div class="hamburger"><i class="fas fa-bars"></i></div>
-      <h2>CIPHERA</h2>
+  <div class="main">
+    <div class="page-header">
+      <div class="header-left">
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+        <h2>CIPHERA</h2>
+      </div>
+      
+      <div class="header-right">
+        <div class="icon-btn"><i class="fas fa-bell"></i><span class="badge">3</span></div>
+        <div class="icon-btn"><i class="fas fa-gear"></i></div>
+        <div class="avatar-btn">
+          <img src="https://i.pravatar.cc/40?img=1" alt="avatar" class="avatar-img">
+          <div class="user-dropdown">
+            <div class="user-info">
+              <h4>John Doe</h4>
+              <p>john.doe@example.com</p>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item"><span class="icon"><i class="fas fa-user-gear"></i></span>Account Settings</a>
+            <a href="#" class="dropdown-item"><span class="icon"><i class="fas fa-credit-card"></i></span>Subscription</a>
+            <a href="#" class="dropdown-item"><span class="icon"><i class="fas fa-life-ring"></i></span>Support</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item"><span class="icon"><i class="fas fa-right-from-bracket"></i></span>Logout</a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="header-right">
-      <div class="icon-btn"><i class="fas fa-bell"></i><span class="badge">3</span></div>
-      <div class="icon-btn"><i class="fas fa-gear"></i></div>
+    <div class="dashboard-title">
+      <h1>Dashboard Overview</h1>
+      <hr>
+    </div>
 
-      <div class="avatar-btn">
-        <img src="https://i.pravatar.cc/40?img=1" alt="avatar" class="avatar-img">
-        <div class="user-dropdown">
-          <div class="user-info"><h4>John Doe</h4><p>john.doe@example.com</p></div>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item"><span class="icon"><i class="fas fa-user-gear"></i></span>Account Settings</a>
-          <a href="#" class="dropdown-item"><span class="icon"><i class="fas fa-credit-card"></i></span>Subscription</a>
-          <a href="#" class="dropdown-item"><span class="icon"><i class="fas fa-life-ring"></i></span>Support</a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item"><span class="icon"><i class="fas fa-right-from-bracket"></i></span>Logout</a>
-        </div>
+    <div class="info-cards">
+      <div class="card">
+        <div class="card-header"><h3>Device Info</h3></div>
+        <div class="field"><span class="label">Model</span><span class="value">iPhone 13 Pro</span></div>
+        <div class="field"><span class="label">OS</span><span class="value">iOS 15.4</span></div>
+        <div class="field"><span class="label">Battery</span><span class="value">86%</span></div>
+        <div class="field"><span class="label">Network</span><span class="value">Bell Mobility</span></div>
+        <div class="field"><span class="label">Status</span><span class="value"><span style="color:#3ae374">●</span> Connected</span></div>
+        <div class="field"><span class="label">Last Sync</span><span class="value">5 minutes ago</span></div>
+        <div class="field"><span class="label">IMEI</span><span class="value">356938035643809</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3>Product Info</h3></div>
+        <div class="field"><span class="label">License</span><span class="value">Premium</span></div>
+        <div class="field"><span class="label">Expires</span><span class="value">2024-12-31</span></div>
+        <div class="field"><span class="label">Version</span><span class="value">21.5</span></div>
+        <div class="field"><span class="label">License Key</span><span class="value">****-****-****-****</span></div>
+        <div class="field"><span class="label">Features</span><span class="value">All Features</span></div>
+        <div class="field"><span class="label">Support</span><span class="value">Priority</span></div>
+        <div class="field"><span class="label">Updates</span><span class="value">Automatic</span></div>
+      </div>
+    </div>
+
+    <div class="list-cards">
+      <div class="card">
+        <div class="card-header"><h3>Latest Calls</h3><a href="#" class="more">More</a></div>
+        <ul>
+          <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0123</div></div><div class="item-time">-13 919 s</div></li>
+          <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0456</div></div><div class="item-time">-13 139 s</div></li>
+          <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0789</div></div><div class="item-time">2 h</div></li>
+          <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0231</div></div><div class="item-time">3 h</div></li>
+          <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0567</div></div><div class="item-time">20 h</div></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3>Latest Messages</h3><a href="#" class="more">More</a></div>
+        <ul>
+          <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">John</div><div class="text">"Hey, are we still meeting today at 5?"</div></div><div class="item-time">-13 739 s</div></li>
+          <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">Sarah</div><div class="text">"Thanks for the update!"</div></div><div class="item-time">-12 839 s</div></li>
+          <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">David</div><div class="text">"I'll send you the files later today"</div></div><div class="item-time">2 h</div></li>
+          <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">Mom</div><div class="text">"Don't forget to call grandma tonight!"</div></div><div class="item-time">4 h</div></li>
+          <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">Emma</div><div class="text">"When are you coming home tonight?"</div></div><div class="item-time">20 h</div></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3>Latest Keylogs</h3><a href="#" class="more">More</a></div>
+        <ul>
+          <li><div class="item-icon"><i class="fab fa-chrome"></i></div><div class="item-content"><div class="title">Chrome – facebook.com</div><div class="text">"Hello, how are you?"</div></div><div class="item-time">-13 978 s</div></li>
+          <li><div class="item-icon"><i class="fas fa-comment-alt"></i></div><div class="item-content"><div class="title">Messages – iMessage</div><div class="text">"See you tomorrow!"</div></div><div class="item-time">-13 439 s</div></li>
+          <li><div the="true" class="item-icon"><i class="fab fa-instagram"></i></div><div class="item-content"><div class="title">Instagram – DM</div><div class="text">"I'll check it out later"</div></div><div class="item-time">-12 239 s</div></li>
+          <li><div class="item-icon"><i class="fab fa-twitter"></i></div><div class="item-content"><div class="title">Twitter – Search</div><div class="text">"latest news tech"</div></div><div class="item-time">3 h</div></li>
+          <li><div class="item-icon"><i class="fas fa-envelope-open-text"></i></div><div class="item-content"><div class="title">Gmail – Compose</div><div class="text">"Meeting agenda for…"</div></div><div class="item-time">20 h</div></li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <div class="dashboard-title"><h1>Dashboard Overview</h1><hr></div>
-
-  <!-- Info cards -->
-  <div class="info-cards">
-    <div class="card">
-      <div class="card-header"><h3>Device Info</h3></div>
-      <div class="field"><span class="label">Model</span><span class="value">iPhone 13 Pro</span></div>
-      <div class="field"><span class="label">OS</span><span class="value">iOS 15.4</span></div>
-      <div class="field"><span class="label">Battery</span><span class="value">86%</span></div>
-      <div class="field"><span class="label">Network</span><span class="value">Bell Mobility</span></div>
-      <div class="field"><span class="label">Status</span><span class="value"><span style="color:#3ae374">●</span> Connected</span></div>
-      <div class="field"><span class="label">Last Sync</span><span class="value">5 minutes ago</span></div>
-      <div class="field"><span class="label">IMEI</span><span class="value">356938035643809</span></div>
-    </div>
-
-    <div class="card">
-      <div class="card-header"><h3>Product Info</h3></div>
-      <div class="field"><span class="label">License</span><span class="value">Premium</span></div>
-      <div class="field"><span class="label">Expires</span><span class="value">2024-12-31</span></div>
-      <div class="field"><span class="label">Version</span><span class="value">21.5</span></div>
-      <div class="field"><span class="label">License Key</span><span class="value">****-****-****-****</span></div>
-      <div class="field"><span class="label">Features</span><span class="value">All Features</span></div>
-      <div class="field"><span class="label">Support</span><span class="value">Priority</span></div>
-      <div class="field"><span class="label">Updates</span><span class="value">Automatic</span></div>
-    </div>
-  </div>
-
-  <!-- List cards -->
-  <div class="list-cards">
-    <div class="card">
-      <div class="card-header"><h3>Latest Calls</h3><a href="#" class="more">More</a></div>
-      <ul>
-        <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0123</div></div><div class="item-time">-13 919 s</div></li>
-        <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0456</div></div><div class="item-time">-13 139 s</div></li>
-        <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0789</div></div><div class="item-time">2 h</div></li>
-        <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0231</div></div><div class="item-time">3 h</div></li>
-        <li><div class="item-icon"><i class="fas fa-phone"></i></div><div class="item-content"><div class="title">+1 (514) 555-0567</div></div><div class="item-time">20 h</div></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-header"><h3>Latest Messages</h3><a href="#" class="more">More</a></div>
-      <ul>
-        <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">John</div><div class="text">“Hey, are we still meeting today at 5?”</div></div><div class="item-time">-13 739 s</div></li>
-        <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">Sarah</div><div class="text">“Thanks for the update!”</div></div><div class="item-time">-12 839 s</div></li>
-        <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">David</div><div class="text">“I’ll send you the files later today”</div></div><div class="item-time">2 h</div></li>
-        <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">Mom</div><div class="text">“Don’t forget to call grandma tonight!”</div></div><div class="item-time">4 h</div></li>
-        <li><div class="item-icon"><i class="fas fa-user"></i></div><div class="item-content"><div class="title">Emma</div><div class="text">“When are you coming home tonight?”</div></div><div class="item-time">20 h</div></li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-header"><h3>Latest Keylogs</h3><a href="#" class="more">More</a></div>
-      <ul>
-        <li><div class="item-icon"><i class="fab fa-chrome"></i></div><div class="item-content"><div class="title">Chrome – facebook.com</div><div class="text">“Hello, how are you?”</div></div><div class="item-time">-13 978 s</div></li>
-        <li><div class="item-icon"><i class="fas fa-comment-alt"></i></div><div class="item-content"><div class="title">Messages – iMessage</div><div class="text">“See you tomorrow!”</div></div><div class="item-time">-13 439 s</div></li>
-        <li><div the="true" class="item-icon"><i class="fab fa-instagram"></i></div><div class="item-content"><div class="title">Instagram – DM</div><div class="text">“I’ll check it out later”</div></div><div class="item-time">-12 239 s</div></li>
-        <li><div class="item-icon"><i class="fab fa-twitter"></i></div><div class="item-content"><div class="title">Twitter – Search</div><div class="text">“latest news tech”</div></div><div class="item-time">3 h</div></li>
-        <li><div class="item-icon"><i class="fas fa-envelope-open-text"></i></div><div class="item-content"><div class="title">Gmail – Compose</div><div class="text">“Meeting agenda for…”</div></div><div class="item-time">20 h</div></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<script>
-/* ---------- SIDEBAR ---------- */
-const sidebar   = document.querySelector('.sidebar');
-const overlay   = document.querySelector('.overlay');
-const hamburger = document.querySelector('.hamburger');
-
-function openSidebar(){sidebar.classList.add('open');overlay.classList.add('show');}
-function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('show');}
-
-hamburger.addEventListener('click',openSidebar);
-overlay.addEventListener('click',closeSidebar);
-
-/* close drawer on non-accordion links (mobile) */
-document.querySelectorAll('.sidebar a').forEach(link=>{
-  link.addEventListener('click',()=>{
-    if(window.innerWidth<=768 && !link.parentElement.classList.contains('has-submenu')){
-      closeSidebar();
-    }
-  });
-});
-
-/* accordion toggle */
-document.querySelectorAll('.has-submenu > a').forEach(toggle=>{
-  toggle.addEventListener('click',e=>{
-    e.preventDefault();
-    toggle.parentElement.classList.toggle('active');
-  });
-});
-
-/* ---------- USER DROPDOWN ---------- */
-const avatarBtn = document.querySelector('.avatar-btn');
-const userMenu  = document.querySelector('.user-dropdown');
-
-avatarBtn.addEventListener('click',e=>{
-  e.stopPropagation();
-  userMenu.classList.toggle('show');
-});
-document.addEventListener('click',e=>{
-  if(!userMenu.contains(e.target) && !avatarBtn.contains(e.target)){
-    userMenu.classList.remove('show');
-  }
-});
-</script>
+  <script src="/static/js/components.js"></script>
 </body>
 </html>
