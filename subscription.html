@@ -112,63 +112,18 @@
   </style>
 </head>
 <body>
-
   <div class="overlay"></div>
+  
+  <aside class="sidebar-container"></aside>
 
-  <!-- ===== SIDEBAR ===== -->
-  <aside class="sidebar">
-    <div class="logo">CIPHERA</div>
-    <ul>
-      <li><a href="#"><span class="icon"><i class="fas fa-gauge-high"></i></span>Dashboard</a></li>
-      <li class="has-submenu">
-        <a href="#"><span class="icon"><i class="fas fa-database"></i></span>Data</a>
-        <ul>
-          <li><a href="#"><span class="icon"><i class="fas fa-map-marker-alt"></i></span>Location</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-phone"></i></span>Call Log</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-comment"></i></span>Messages</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-comments"></i></span>IMs</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-address-book"></i></span>Contacts</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-key"></i></span>Key Logs</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-phone-volume"></i></span>VoIP</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-file-audio"></i></span>VoIP Recordings</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-envelope"></i></span>Emails</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-camera"></i></span>App Screenshots</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-image"></i></span>Photos</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-video"></i></span>Videos</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-volume-up"></i></span>Ambient</a></li>
-          <li><a href="#"><span class="icon"><i class="fas fa-chart-line"></i></span>App Activity</a></li>
-        </ul>
-      </li>
-      <li><a href="#"><span class="icon"><i class="fas fa-bell"></i></span>Alerts</a></li>
-      <li><a href="#"><span class="icon"><i class="fas fa-comment-alt"></i></span>Spoof SMS</a></li>
-      <li><a href="#"><span class="icon"><i class="fas fa-file-alt"></i></span>Reports</a></li>
-      <li><a href="#"><span class="icon"><i class="fas fa-credit-card"></i></span>Subscription</a></li>
-    </ul>
-  </aside>
-
-  <!-- ===== MAIN ===== -->
   <div class="main">
     <div class="page-header">
       <div class="header-left">
         <div class="hamburger"><i class="fas fa-bars"></i></div>
         <h2>Subscription</h2>
       </div>
-      <div class="header-right">
-        <div class="icon-btn"><i class="fas fa-bell"></i><span class="badge">3</span></div>
-        <div class="icon-btn"><i class="fas fa-gear"></i></div>
-        <div class="avatar-btn">
-          <img src="https://i.pravatar.cc/40?img=1" class="avatar-img" alt="">
-          <div class="user-dropdown">
-            <div class="user-info"><h4>John Doe</h4><p>john.doe@example.com</p></div>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><span class="icon"><i class="fas fa-user-gear"></i></span>Account Settings</a>
-            <a class="dropdown-item" href="#"><span class="icon"><i class="fas fa-credit-card"></i></span>Subscription</a>
-            <a class="dropdown-item" href="#"><span class="icon"><i class="fas fa-life-ring"></i></span>Support</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><span class="icon"><i class="fas fa-right-from-bracket"></i></span>Logout</a>
-          </div>
-        </div>
-      </div>
+      
+      <div class="header-right-container"></div>
     </div>
 
     <div class="sub-title">Manage Your Subscription</div>
@@ -222,28 +177,8 @@
     </div>
   </div>
 
+  <script src="./static/js/components.js"></script>
   <script>
-  /* SIDEBAR MOBILE */
-  const sidebar=document.querySelector('.sidebar'),
-        overlay=document.querySelector('.overlay'),
-        hamburger=document.querySelector('.hamburger');
-  function openSide(){sidebar.classList.add('open');overlay.classList.add('show')}
-  function closeSide(){sidebar.classList.remove('open');overlay.classList.remove('show')}
-  hamburger.addEventListener('click',openSide);
-  overlay.addEventListener('click',closeSide);
-  document.querySelectorAll('.sidebar a').forEach(l=>
-    l.addEventListener('click',()=>{if(window.innerWidth<=768&&!l.parentElement.classList.contains('has-submenu'))closeSide()})
-  );
-  document.querySelectorAll('.has-submenu>a').forEach(t=>
-    t.addEventListener('click',e=>{e.preventDefault();t.parentElement.classList.toggle('active')})
-  );
-
-  /* USER DROPDOWN */
-  const avatarBtn=document.querySelector('.avatar-btn'),
-        userMenu=document.querySelector('.user-dropdown');
-  avatarBtn.addEventListener('click',e=>{e.stopPropagation();userMenu.classList.toggle('show')});
-  document.addEventListener('click',e=>{if(!userMenu.contains(e.target)&&!avatarBtn.contains(e.target))userMenu.classList.remove('show')});
-
   /* COPY LICENSE */
   function copyLic(){
     navigator.clipboard.writeText(document.getElementById('lk').innerText).then(_=>alert('Copied'));
